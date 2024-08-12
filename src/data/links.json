@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Website",
+    "icon": "rocket",
+    "href": "https://roblesar.pages.dev/",
+    "alt": "Personal linkedin"
+  },
+  {
+    "title": "Linkedin",
+    "icon": "linkedin",
+    "href": "https://linkedin.com/in/robles-ra/",
+    "alt": "Personal linkedin"
+  },
+  {
+    "title": "Github",
+    "icon": "github",
+    "href": "https://github.com/roblesdotdev/",
+    "alt": "Personal github"
+  },
+  {
+    "title": "Twitter(x)",
+    "icon": "twitter",
+    "href": "https://x.com/roblesdotdev/",
+    "alt": "Personal twitter"
+  },
+  {
+    "title": "Personal Notes",
+    "icon": "notes",
+    "href": "https://roblesar.pages.dev/notes",
+    "alt": "Personal notes"
+  }
+]

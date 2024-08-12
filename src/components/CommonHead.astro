@@ -1,0 +1,34 @@
+---
+import { AstroFont } from 'astro-font'
+
+type Props = {
+  title: string
+  description?: string
+}
+
+const { title, description } = Astro.props
+---
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Astro description" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title}</title>
+  <AstroFont
+    config={[
+      {
+        src: [],
+        name: 'Poppins',
+        // Google Fonts URL
+        googleFontsURL:
+          'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap',
+        preload: true,
+        display: 'swap',
+        selector: 'body',
+        fallback: 'sans-serif',
+        cssVariable: 'font-family',
+      },
+    ]}
+  />
+</head>

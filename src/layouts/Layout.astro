@@ -1,25 +1,24 @@
 ---
+import CommonHead from '~/components/CommonHead.astro'
 import '~/styles/global.css'
 
 interface Props {
   title: string
+  description?: string
 }
 
-const { title } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title}</title>
-  </head>
-  <body class="min-h-screen min-w-[320px] antialiased">
-    <main>
+  <CommonHead title={title} description={description} />
+  <body class="flex min-h-dvh min-w-[320px] flex-col antialiased">
+    <main class="container flex-1 pt-16">
       <slot />
     </main>
+    <footer class="container py-16 text-center text-neutral-600">
+      <p>&copy; Aldo R. Robles - {new Date().getFullYear()}</p>
+    </footer>
   </body>
 </html>
