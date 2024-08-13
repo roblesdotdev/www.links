@@ -1,4 +1,5 @@
 ---
+import clsx from 'clsx'
 import { Icon } from 'astro-icon/components'
 import Layout from '../layouts/Layout.astro'
 import links from '~/data/links.json'
@@ -8,9 +9,15 @@ import links from '~/data/links.json'
   <div class="grid">
     <div class="grid place-items-center gap-12 sm:gap-16">
       <div class="grid max-w-md place-items-center text-center">
-        <div class="size-20 rounded-full bg-neutral-200"></div>
-        <h1 class="xs:text-2xl mt-6 text-xl font-medium">Aldo R. Robles</h1>
-        <p class="xs:leading-7 mt-4 text-neutral-600">
+        <div class="animate-slide-up size-20 rounded-full bg-neutral-200"></div>
+        <h1
+          class="xs:text-2xl animate-slide-up mt-6 text-xl font-medium [animation-delay:150ms]"
+        >
+          Aldo R. Robles
+        </h1>
+        <p
+          class="xs:leading-7 animate-slide-up text-fg-muted mt-4 text-neutral-600 [animation-delay:300ms]"
+        >
           👋 Hey there! Here you can find links to my work, personal projects,
           and more.
         </p>
@@ -18,10 +25,16 @@ import links from '~/data/links.json'
 
       <ul class="flex w-full flex-col gap-2">
         {
-          links.map(link => (
+          links.map((link, idx) => (
             <li>
               <a
-                class="flex items-center gap-2 rounded-2xl border p-4 sm:py-6"
+                style={{ '--loop-idx': idx }}
+                class={clsx(
+                  'border-border/50 text-fg-muted focus:ring-accent focus:ring-offset-canvas flex items-center gap-2 rounded-2xl border p-4 transition duration-300 hover:-rotate-1 focus:ring-2 focus:ring-offset-2 sm:py-6',
+                  'animate-slide-down',
+                  '[animation-delay:calc(150ms*var(--loop-idx))]',
+                  'bg-accent/5 hover:text-fg',
+                )}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"

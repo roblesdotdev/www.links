@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: 0 0% 2%;
+    --fg-default: 240 6% 94%;
+    --fg-muted: 235 8% 72%;
+    --accent: 229 47% 50%;
+    --border: 231 6% 24%;
+  }
+
+  * {
+    @apply outline-none;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-canvas text-fg;
+  }
+}
