@@ -6,12 +6,12 @@ type Props = {
   description?: string
 }
 
-const { title, description } = Astro.props
+const { title, description = 'Discover my personal links.' } = Astro.props
 ---
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Astro description" />
+  <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{title}</title>
@@ -19,14 +19,14 @@ const { title, description } = Astro.props
     config={[
       {
         src: [],
-        name: 'Poppins',
+        name: 'Space Mono',
         // Google Fonts URL
         googleFontsURL:
-          'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,700&display=swap',
+          'https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap',
         preload: true,
         display: 'swap',
         selector: 'body',
-        fallback: 'sans-serif',
+        fallback: 'monospace',
         cssVariable: 'font-family',
       },
     ]}
