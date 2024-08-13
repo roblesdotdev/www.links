@@ -17,6 +17,7 @@ export default {
       transparent: 'transparent',
       current: 'currentColor',
       canvas: 'hsl(var(--canvas) / <alpha-value>)',
+      panel: 'hsl(var(--panel) / <alpha-value>)',
       accent: 'hsl(var(--accent) / <alpha-value>)',
       fg: {
         DEFAULT: 'hsl(var(--fg-default) / <alpha-value>)',

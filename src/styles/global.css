@@ -4,7 +4,8 @@
 
 @layer base {
   :root {
-    --canvas: 0 0% 2%;
+    --canvas: 240 6% 7%;
+    --panel: 240 4% 10%;
     --fg-default: 240 6% 94%;
     --fg-muted: 235 8% 72%;
     --accent: 229 47% 50%;
