@@ -1,0 +1,36 @@
+---
+import { Icon } from 'astro-icon/components'
+import clsx from 'clsx'
+
+type Props = {
+  idx: number
+  link: {
+    title: string
+    href: string
+    icon: string
+  }
+}
+
+const { idx, link } = Astro.props
+---
+
+<li>
+  <a
+    style={{ '--loop-idx': idx }}
+    class={clsx(
+      'flex items-center gap-2 rounded-2xl border border-border/75 bg-panel/75 p-4 text-sm text-fg-muted sm:py-6',
+      // animation
+      'animate-slide-down transition duration-300',
+      '[animation-delay:calc(150ms*var(--loop-idx))]',
+      // focus / hover
+      'focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas',
+      'hover:rotate-1 hover:text-fg',
+    )}
+    href={link.href}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Icon name={link.icon} />
+    <h1>{link.title}</h1>
+  </a>
+</li>

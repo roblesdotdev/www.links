@@ -1,14 +1,17 @@
 ---
-import clsx from 'clsx'
-import { Icon } from 'astro-icon/components'
 import Layout from '../layouts/Layout.astro'
 import links from '~/data/links.json'
+import AppLink from '~/components/AppLink.astro'
 ---
 
 <Layout title="Aldo R. Robles Links">
   <div class="grid place-items-center gap-12 sm:gap-16">
     <div class="grid max-w-md place-items-center text-center">
-      <div class="size-20 animate-slide-up rounded-full bg-fg/5"></div>
+      <img
+        src="/profile.jpeg"
+        alt="Aldo R. Robles avatar"
+        class="size-20 animate-slide-up rounded-full ring-2 ring-panel ring-offset-4 ring-offset-canvas"
+      />
       <h1
         class="mt-6 animate-slide-up whitespace-nowrap text-lg font-medium [animation-delay:150ms] xs:text-2xl"
       >
@@ -23,30 +26,7 @@ import links from '~/data/links.json'
     </div>
 
     <ul class="flex w-full flex-col gap-2">
-      {
-        links.map((link, idx) => (
-          <li>
-            <a
-              style={{ '--loop-idx': idx }}
-              class={clsx(
-                'flex items-center gap-2 rounded-2xl border border-border/75 bg-panel/75 p-4 text-sm text-fg-muted sm:py-6',
-                // animation
-                'animate-slide-down transition duration-300',
-                '[animation-delay:calc(150ms*var(--loop-idx))]',
-                // focus / hover
-                'focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-canvas',
-                'hover:rotate-1 hover:text-fg',
-              )}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon name={link.icon} />
-              <h1>{link.title}</h1>
-            </a>
-          </li>
-        ))
-      }
+      {links.map((link, idx) => <AppLink idx={idx} link={link} />)}
     </ul>
   </div>
 </Layout>
