@@ -6,6 +6,8 @@ type Props = {
   description?: string
 }
 
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+const ogImage = new URL('/og-img.png', Astro.url).href
 const { title, description = 'Discover my personal links.' } = Astro.props
 ---
 
@@ -31,4 +33,21 @@ const { title, description = 'Discover my personal links.' } = Astro.props
       },
     ]}
   />
+
+  <!-- Open Graph -->
+  <meta name="og:url" content={Astro.url.href} />
+  <meta name="og:title" content={title} />
+  <meta name="og:description" content={description} />
+  <meta property="og:image" content={ogImage} />
+  <!-- TODO og image -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@roblesdotdev" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta property="twitter:image" content={ogImage} />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={canonicalURL} />
 </head>
