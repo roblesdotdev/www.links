@@ -24,9 +24,9 @@
     "alt": "Personal twitter"
   },
   {
-    "title": "Personal Notes",
+    "title": "Email",
     "icon": "notes",
-    "href": "https://roblesar.pages.dev/notes",
+    "href": "mailto:robles.contactme@gmail.com?subject=Work",
     "alt": "Personal notes"
   }
 ]
