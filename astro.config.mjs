@@ -7,7 +7,7 @@ import sitemap from '@astrojs/sitemap'
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  site: 'https://www-links.pages.dev',
+  site: 'https://links.roblesar.cc',
   compressHTML: true,
   prefetch: true,
   server: {
