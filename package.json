@@ -11,19 +11,21 @@
     "prettier": "prettier \"**/*.+(js|jsx|astro|css|ts|tsx|cjs|mjs)\"",
     "format": "pnpm prettier --list-different",
     "format:write": "pnpm prettier --write",
-    "validate": "run-s lint format build",
-    "lint": "eslint ."
+    "check": "astro check",
+    "validate": "run-s lint format check",
+    "lint": "eslint .",
+    "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^5.4.2",
     "astro-font": "^1.0.0",
     "astro-icon": "^1.1.5",
-    "clsx": "^2.1.1",
-    "typescript": "^5.8.2"
+    "clsx": "^2.1.1"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@tailwindcss/vite": "^4.0.10",
     "@typescript-eslint/parser": "^8.26.0",
     "eslint": "^9.21.0",
     "eslint-plugin-astro": "^1.3.1",
@@ -32,8 +34,8 @@
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "@tailwindcss/vite": "^4.0.10",
-    "tailwindcss": "^4.0.10"
+    "tailwindcss": "^4.0.10",
+    "typescript": "^5.8.2"
   },
   "packageManager": "pnpm@10.5.2",
   "engines": {
