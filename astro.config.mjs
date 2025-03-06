@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import icon from 'astro-icon'
 
 import sitemap from '@astrojs/sitemap'
@@ -11,13 +11,16 @@ export default defineConfig({
   compressHTML: true,
   prefetch: true,
   server: {
-    port: 5173,
+    port: 3000,
   },
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    icon(),
-    sitemap(),
-  ],
+  build: {
+    inlineStylesheets: 'always',
+  },
+  vite: {
+    plugins: [tailwindcss()],
+    build: {
+      cssMinify: true,
+    },
+  },
+  integrations: [icon(), sitemap()],
 })
